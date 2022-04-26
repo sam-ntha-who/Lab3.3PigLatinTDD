@@ -1,0 +1,15 @@
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+
+class PigLatinTest {
+
+	@Test
+	void translatetest() {
+		String expected = "apple";
+		String actual = PigLatin.translate("apple");
+		assertEquals(expected, actual);
+	}
+
+}

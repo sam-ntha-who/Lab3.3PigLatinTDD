@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;PigLatin.multipleWords(...)&apos; to &apos;phrase&apos;&#x0A;- Original project: &apos;TDDPigLatinLab&apos;&#x0A;- Original element: &apos;PigLatin.multipleWords(...)&apos;&#x0A;- Renamed element: &apos;PigLatin.phrase(...)&apos;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;multipleWords&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;{PigLatin.java[PigLatin~multipleWords~QString;" name="phrase" references="true" stamp="1650674402741" version="1.0"/>
+</session>

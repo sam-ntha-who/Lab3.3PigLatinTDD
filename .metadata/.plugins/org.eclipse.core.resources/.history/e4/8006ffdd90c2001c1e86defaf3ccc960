@@ -1,0 +1,73 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class PigLatin {
+
+	public static void main(String[] args) {
+		System.out.println("Please enter a word you would like translated into Pig Latin:");
+		Scanner scnr = new Scanner(System.in);
+		String toPigLatin = scnr.nextLine();
+		System.out.println("Your word is: " + toPigLatin);
+		if (toPigLatin.matches(".*\\s.*")) {
+			toPigLatin = multipleWords(toPigLatin);
+		}
+	
+		System.out.println("In Pig Latin, that translates to: " + translate(toPigLatin));
+		scnr.close();
+	}
+
+	public static Boolean isVowel(char c) {
+		char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
+		String word = String.valueOf(c);
+		String vowelsOnly = new String(vowels);
+		return vowelsOnly.contains(word);
+	}
+
+	public static String translate(String toPigLatin) {
+		// pig latin rules, take leading consonants from the beginning of a word
+		// move them to the end of the word, then add suffix -ay. Y is a consonant here
+		// if the word starts with a vowel, just end word with suffix -way
+		toPigLatin = toPigLatin.toLowerCase();
+		// tests for spaces between words
+		
+		char[] word = toPigLatin.toCharArray();
+		String firstSub;
+		String lastSub;
+		if (isVowel(word[0]) == true) {
+			toPigLatin = toPigLatin + "way";
+		} else {
+			// move thru consonants
+			int index = 0;
+			for (int i = 0; i <= toPigLatin.length(); i++) {
+
+				if (isVowel(toPigLatin.toCharArray()[i]) == true) {
+					index = i;
+					break;
+				}
+			}
+			firstSub = toPigLatin.substring(index);
+			lastSub = toPigLatin.substring(0, index);
+			toPigLatin = firstSub + lastSub + "ay";
+
+		}
+
+		return toPigLatin;
+	}
+
+	public static String multipleWords(String toPigLatin) {
+		String multi;
+		String [] multiWord = toPigLatin.split(" ");
+		System.out.println(Arrays.toString(multiWord));
+		for (int i = 0; i < multiWord.length; i++) {
+		multi = Arrays.toString(multiWord);
+		toPigLatin = translate(multi);
+		}
+		return toPigLatin;
+		}
+}
+
+//String [] wordArray = word.split(" ");
+//for (int i = 0; i < wordArray.length; i++) {
+//	
+//}

@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class PigLatinPrompt {
+
+	public static void main(String[] args) {
+		System.out.println("Please enter a word you would like translated into Pig Latin:");
+		Scanner scnr = new Scanner(System.in);
+		String toPigLatin = scnr.nextLine();
+		
+	}
+
+}
